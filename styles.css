@@ -1,0 +1,123 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('bg.png'); /* Add your image URL here */
+    background-size: cover; /* Makes sure the background covers the entire page */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Fixes the background when scrolling */
+    color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevents scrolling */
+}
+.container {
+    text-align: center;
+    border-radius: 10px;
+}
+#affirmationText {
+    font-family: 'Comic Sans MS', cursive, sans-serif;/* A dramatic serif font, can change if needed */
+    font-size: 2rem; /* Make the text bigger */
+    font-weight: 500; /* Bold weight for emphasis */
+     /* Make the text uppercase for drama */
+    letter-spacing: 1px; /* Space the letters out for an elegant look */
+
+    color: #000000; /* Light color that contrasts the background */
+    margin: 20px 0; /* Add some margin around the text */
+    transition: transform 0.3s ease-in-out; /* Animate on hover */
+}
+
+#affirmationText:hover {
+    transform: scale(1.05); /* Slightly enlarge the text on hover for extra drama */
+}
+
+.card {
+    width: 350px;
+    height: 400px;
+    perspective: 1000px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.4s ease-in-out;
+    /* No glow by default */
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+    border-radius: 10px;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.card-front {
+ 
+    color: #fff;
+}
+
+.card-back {
+    background-color: #fdcfff;
+
+    color: #6d5b4b;
+    transform: rotateY(180deg);
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff64e8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #7e3f85;
+}
+
+
+/* Flip card when .flipped class is added */
+.flipped {
+    transform: rotateY(180deg);
+    /* Subtle Pink and Purple gradient glow effect */
+    box-shadow: 0 0 15px 5px rgba(255, 105, 180, 0.4), /* Subtle Pink */
+                0 0 20px 10px rgba(138, 43, 226, 0.3); /* Subtle Purple */
+    animation: glowPulse 3s infinite;
+}
+
+/* Subtle Pink and Purple gradient glow animation */
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 15px 5px rgba(146, 2, 74, 0.4), /* Subtle Pink */
+                    0 0 20px 10px rgba(39, 0, 76, 0.3); /* Subtle Purple */
+    }
+    50% {
+        box-shadow: 0 0 20px 8px rgba(255, 105, 180, 0.5), /* Slightly Brighter Pink */
+                    0 0 25px 15px rgba(138, 43, 226, 0.4); /* Slightly Brighter Purple */
+    }
+    100% {
+        box-shadow: 0 0 15px 5px rgba(255, 105, 180, 0.4), /* Subtle Pink */
+                    0 0 20px 10px rgba(138, 43, 226, 0.3); /* Subtle Purple */
+    }
+}
